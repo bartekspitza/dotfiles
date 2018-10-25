@@ -1,3 +1,1 @@
-## My dotfiles
-
-These are my config files, feel free to try them out!
+## These are my configuration files, feel free to try them out! 😀
