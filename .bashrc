@@ -13,6 +13,7 @@ export PS1;
 
 ### Aliases
 alias p3=python3;
+alias vi=vim;
 cd() { builtin cd "$@" && ls; }
 
 bind 'set completion-ignore-case on';
