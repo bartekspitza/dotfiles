@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# Modifies the shell to be aesthetically pleasing for YT
+
+PROMPT='%{$fg_bold[cyan]%}%c%{$reset_color%}$(git_prompt_info) '
