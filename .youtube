@@ -1,14 +1,14 @@
 #!/usr/bin/bash
 
 # Modifies the shell to be aesthetically pleasing for YT
-
-PROMPT='%{$fg_bold[cyan]%}%c%{$reset_color%}$(git_prompt_info) '
+PROMPT='%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_prompt_info) '
 
 # Sets up recording and playing back of terminal sessions
 RECORD_DIR="${HOME}/yt-recordings"
 mkdir -p "$RECORD_DIR"
 function rec() {
     COUNT=`ls "$RECORD_DIR" | wc -l`
+    COUNT=$((COUNT/2))
     COUNT=$((COUNT+1))
 
     TIMING_FILE="${RECORD_DIR}/${COUNT}.tm"
