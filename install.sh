@@ -22,7 +22,13 @@ if [ -e "dotfiles" ]; then
       source "$file"
     fi
   done
-fi' >> "$SH"
+fi
+
+if [ ! -e ".ssh_aliases" ]; then
+  touch .ssh_aliases
+fi
+source .ssh_aliases
+' >> "$SH"
 
 # Tmux conf
 if [ ! -e "${HOME}/.tmux.conf" ]; then
@@ -34,5 +40,6 @@ if [ ! -e "${HOME}/.vimrc" ]; then
 	ln -s "${SCRIPT_DIR}/.vimrc" ~/.vimrc
 fi
 
-
-echo "Done"
+echo "Done. Files in *shell* will be sourced."
+echo "Symlinked .vimrc & .tmux.conf to home-dir"
+echo "You can put ssh_aliases in ~/.ssh_aliases"
