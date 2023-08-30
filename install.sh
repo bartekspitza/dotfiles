@@ -16,18 +16,18 @@ fi
 
 # Modify the shell
 echo '# Following lines are installed through the dotfiles repo
-if [ -e "dotfiles" ]; then
-  for file in dotfiles/shell/*; do
+if [ -e ~/dotfiles ]; then
+  for file in ~/dotfiles/shell/*; do
     if [ -f "$file" ]; then
       source "$file"
     fi
   done
 fi
 
-if [ ! -e ".ssh_aliases" ]; then
-  touch .ssh_aliases
+if [ ! -e ~/.ssh_aliases ]; then
+  touch ~/.ssh_aliases
 fi
-source .ssh_aliases
+source ~/.ssh_aliases
 ' >> "$SH"
 
 # Tmux conf
