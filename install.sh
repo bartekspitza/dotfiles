@@ -32,6 +32,15 @@ for file in shell/*; do
         fi
     fi
 done
+
+# Ask if .ssh_aliases should be sourced
+if ask "Create .ssh_aliases to be sourced?"; then
+    if [ ! -e ~/.ssh_aliases ]; then
+        touch ~/.ssh_aliases
+    fi
+    echo 'source ~/.ssh_aliases' >> "$SH"
+fi
+
 echo '# -------------- bartekspitza:dotfiles install ---------------' >> $SH
 
 # Tmux conf
