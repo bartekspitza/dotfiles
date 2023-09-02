@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Ask Y/n
+function ask() {
+    read -p "$1 (Y/n): " resp
+    if [ -z "$resp" ]; then
+        response_lc="y" # empty is Yes
+    else
+        response_lc=$(echo "$resp" | tr '[:upper:]' '[:lower:]') # case insensitive
+    fi
+
+    [ "$response_lc" = "y" ]
+}
+
 # Check what shell is being used
 SH="${HOME}/.bashrc"
 ZSHRC="${HOME}/.zshrc"
@@ -7,39 +19,27 @@ if [ -f "$ZSHRC" ]; then
 	SH="$ZSHRC"
 fi
 
-SCRIPT_DIR="$(dirname "$(realpath "$0")")" # The dir of this script
+echo >> $SH
+echo '# -------------- bartekspitza:dotfiles install ---------------' >> $SH
 
-# Create symbolic link in home dir
-if [ ! -e "${HOME}/dotfiles" ]; then
-	ln -s "$SCRIPT_DIR" ~/dotfiles
-fi
-
-# Modify the shell
-echo '# Following lines are installed through the dotfiles repo
-if [ -e ~/dotfiles ]; then
-  for file in ~/dotfiles/shell/*; do
+# Ask which files should be sourced
+echo "Do you want $SH to source: "
+for file in shell/*; do
     if [ -f "$file" ]; then
-      source "$file"
+        filename=$(basename "$file")
+        if ask "${filename}?"; then
+            echo "source $(realpath "$file")" >> "$SH"
+        fi
     fi
-  done
-fi
-
-if [ ! -e ~/.ssh_aliases ]; then
-  touch ~/.ssh_aliases
-fi
-source ~/.ssh_aliases
-' >> "$SH"
+done
+echo '# -------------- bartekspitza:dotfiles install ---------------' >> $SH
 
 # Tmux conf
-if [ ! -e "${HOME}/.tmux.conf" ]; then
-	ln -s "${SCRIPT_DIR}/.tmux.conf" ~/.tmux.conf
+if ask "Do you want to install .tmux.conf?"; then
+    ln -s "$(realpath ".tmux.conf")" ~/.tmux.conf
 fi
 
 # Vim conf
-if [ ! -e "${HOME}/.vimrc" ]; then
-	ln -s "${SCRIPT_DIR}/.vimrc" ~/.vimrc
+if ask "Do you want to install .vimrc?"; then
+    ln -s "$(realpath ".vimrc")" ~/.vimrc
 fi
-
-echo "Done. Files in *shell* will be sourced."
-echo "Symlinked .vimrc & .tmux.conf to home-dir"
-echo "You can put ssh_aliases in ~/.ssh_aliases"
