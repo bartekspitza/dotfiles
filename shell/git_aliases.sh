@@ -4,4 +4,4 @@ alias gl='git log'
 alias gc='git checkout'
 alias gp='git push'
 alias gpl='git pull'
-alias dotcommit="git commit -am '.'"
+alias dotcommit="git add . && git commit -m '.'"
