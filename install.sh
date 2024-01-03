@@ -34,21 +34,12 @@ for file in shell/*; do
 done
 
 # Ask if .ssh_aliases should be sourced
-if ask "Create .ssh_aliases to be sourced?"; then
-    if [ ! -e ~/.ssh_aliases ]; then
-        touch ~/.ssh_aliases
-    fi
-    echo 'source ~/.ssh_aliases' >> "$SH"
-fi
+ask "Create .ssh_aliases to be sourced?" && { touch ~/.ssh_aliases; echo 'source ~/.ssh_aliases' >> "$SH"; }
 
 echo '# -------------- bartekspitza:dotfiles install ---------------' >> $SH
 
 # Tmux conf
-if ask "Do you want to install .tmux.conf?"; then
-    ln -s "$(realpath ".tmux.conf")" ~/.tmux.conf
-fi
+ask "Do you want to install .tmux.conf?" && ln -s "$(realpath ".tmux.conf")" ~/.tmux.conf
 
 # Vim conf
-if ask "Do you want to install .vimrc?"; then
-    ln -s "$(realpath ".vimrc")" ~/.vimrc
-fi
+ask "Do you want to install .vimrc?" && ln -s "$(realpath ".vimrc")" ~/.vimrc
