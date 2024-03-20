@@ -7,5 +7,6 @@ alias gm='git merge'
 alias gpl='git pull'
 alias dotcommit="git add . && git commit -m '.'"
 
+alias dk='docker'
 alias dcup='docker compose up'
 alias dcdown='docker compose down'
