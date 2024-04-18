@@ -5,6 +5,7 @@ alias gc='git checkout'
 alias gp='git push'
 alias gm='git merge'
 alias gpl='git pull'
+alias gca='git add . && git commit --amend'
 alias dotcommit="git add . && git commit -m '.'"
 
 alias dk='docker'
