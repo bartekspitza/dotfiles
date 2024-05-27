@@ -4,7 +4,7 @@ alias gl='git log'
 alias gc='git checkout'
 alias gp='git push'
 alias gm='git merge'
-alias gpl='git pull'
+alias gpl='git pull --rebase'
 alias gca='git add . && git commit --amend'
 alias dotcommit="git add . && git commit -m '.'"
 
