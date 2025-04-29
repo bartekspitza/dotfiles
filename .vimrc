@@ -6,6 +6,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+set ignorecase
+set smartcase
+set relativenumber
 
 inoremap jj <ESC>
 map <C-p> :w<CR>:!python3 %<CR>
