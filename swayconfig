@@ -217,5 +217,3 @@ bindsym $mod+r mode "resize"
 
 include /etc/sway/config.d/*
 include ~/.config/sway/machine.conf
-
-exec waybar
