@@ -7,8 +7,7 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
-set $arrowMod Mod1
+set $mod Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -17,13 +16,33 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wofi --show drun 
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show drun
+
+include /etc/sway/config-vars.d/*
+
+# Run launcher using super key
+bindsym --release Super_L exec $menu
+
+# Add swedish, repeat delay etc
+input type:keyboard {
+    repeat_delay 200
+    repeat_rate 100
+
+    xkb_layout us,se
+    xkb_options grp:win_space_toggle
+}
+
+# Waybar
+bar {
+    swaybar_command waybar
+}
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 scale 2
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -37,7 +56,7 @@ output eDP-1 scale 2
 #
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 #          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -48,23 +67,6 @@ output eDP-1 scale 2
 #
 # Example configuration:
 #
-
-input "1452:627:Apple_Inc._Apple_Internal_Keyboard_\/_Trackpad" {
-	xkb_options "altwin:ctrl_win,altwin:left_alt_meta,altwin:meta_alt"
-}
-
-input type:keyboard {
-    repeat_delay 200
-    repeat_rate 100
-
-    xkb_layout us,se
-    xkb_options grp:win_space_toggle
-}
-
-input type:touchpad {
-    #pointer_accel -0.3
-    scroll_factor 0.1
-}
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
 #       dwt enabled
 #       tap enabled
@@ -212,37 +214,8 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-#
-# Utilities:
-#
-    # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
-exec waybar
 
 include /etc/sway/config.d/*
+include ~/.config/sway/machine.conf
+
+exec waybar

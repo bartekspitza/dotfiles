@@ -1,3 +1,5 @@
+# --- This file should go under /etc/keyd/default.conf ---
+
 [ids]
 05ac:0273:21458be1 = *
 
