@@ -44,3 +44,8 @@ fi
 if ask "Do you want to install .vimrc?"; then
     ln -s "$(realpath ".vimrc")" ~/.vimrc
 fi
+
+# Sway conf
+if ask "Do you want to install .config/sway/config?"; then
+    ln -s "$(realpath "swayconfig")" ~/.config/sway/config
+fi
