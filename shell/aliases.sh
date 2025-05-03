@@ -1,11 +1,13 @@
 alias gs='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gl='git log'
 alias gc='git checkout'
 alias gp='git push'
 alias gm='git merge'
 alias gpl='git pull --rebase'
-alias gca='git add . && git commit --amend'
+alias ga='git add .'
+alias gca='git commit --amend'
 alias gr='git restore'
 alias dotcommit="git add . && git commit -m '.'"
 
