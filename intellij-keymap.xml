@@ -1,0 +1,31 @@
+<keymap version="1" name="GNOME copy" parent="Default for GNOME">
+  <action id="ActivateDebugToolWindow">
+    <keyboard-shortcut first-keystroke="alt 5" />
+    <keyboard-shortcut first-keystroke="shift ctrl 3" />
+  </action>
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="alt 1" />
+    <keyboard-shortcut first-keystroke="shift ctrl 1" />
+  </action>
+  <action id="ActivateRunToolWindow">
+    <keyboard-shortcut first-keystroke="alt 4" />
+    <keyboard-shortcut first-keystroke="shift ctrl 4" />
+  </action>
+  <action id="ExportToTextFile" />
+  <action id="FindInPath">
+    <keyboard-shortcut first-keystroke="alt i" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+  <action id="OpenInlineChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
+  <action id="SearchEverywhere">
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
+  <action id="ToggleBookmark1" />
+  <action id="ToggleBookmark3" />
+  <action id="ToggleBookmark4" />
+  <action id="copilot.disposeInlays" />
+</keymap>

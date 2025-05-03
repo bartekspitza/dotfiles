@@ -36,16 +36,18 @@ done
 echo '# -------------- bartekspitza:dotfiles install ---------------' >> $SH
 
 # Tmux conf
-if ask "Do you want to install .tmux.conf?"; then
+if ask ".tmux.conf?"; then
     ln -s "$(realpath ".tmux.conf")" ~/.tmux.conf
 fi
 
 # Vim conf
-if ask "Do you want to install .vimrc?"; then
+if ask ".vimrc?"; then
     ln -s "$(realpath ".vimrc")" ~/.vimrc
 fi
 
-# Sway conf
-if ask "Do you want to install .config/sway/config?"; then
-    ln -s "$(realpath "swayconfig")" ~/.config/sway/config
+# i3 WM
+if ask "i3 and related config files?"; then
+    ln -s "$(realpath "i3.config")" ~/.config/i3/config
+    ln -s "$(realpath "i3status.config")" ~/.config/i3status/config
+    ln -s "$(realpath "dunst.config")" ~/.config/dunst/dunstrc
 fi
