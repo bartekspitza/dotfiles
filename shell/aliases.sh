@@ -8,6 +8,7 @@ alias gm='git merge'
 alias gpl='git pull --rebase'
 alias ga='git add .'
 alias gca='git commit --amend'
+alias gcm='git commit -m'
 alias gr='git restore'
 alias dotcommit="git add . && git commit -m '.'"
 
