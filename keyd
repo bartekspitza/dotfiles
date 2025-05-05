@@ -1,16 +1,23 @@
 # --- This file should go under /etc/keyd/default.conf ---
 
 [ids]
-05ac:0273:21458be1 = *
+*
 
 [main]
-fn = leftcontrol
+capslock = leftcontrol
+rightalt = leftcontrol
+leftmeta = overload(nav,meta)
 
-capslock = overload(arrows, esc)
-rightalt = rightcontrol
-
-[arrows]
+# Access to keyboard arrows using CTRL + hjkl
+[control]
 h = left
 j = down
 k = up
 l = right
+
+# Since CTRL + arrows normally word skips, use Meta + hjkl for this instead
+[meta]
+h = C-left
+j = C-down
+k = C-up
+l = C-right
