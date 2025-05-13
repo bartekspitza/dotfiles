@@ -12,6 +12,10 @@ set relativenumber
 
 inoremap jj <ESC>
 map <C-p> :w<CR>:!python3 %<CR>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <C-q> :q<CR>
+
 set backspace=2
 
 set clipboard=unnamed

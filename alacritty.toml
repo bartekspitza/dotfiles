@@ -1,0 +1,32 @@
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+    #"~/.config/alacritty/themes/themes/github_dark_colorblind.toml"
+    #~/.config/alacritty/themes/themes/horizon_dark.toml"
+    #"~/.config/alacritty/themes/themes/iterm.toml"
+    #"~/.config/alacritty/themes/themes/thelovelace.toml"
+    #"~/.config/alacritty/themes/themes/tokyo_night.toml"
+]
+
+[window]
+
+opacity = 0.98
+
+padding.x = 10
+padding.y = 10
+
+#decorations = "Full"
+#decorations_theme_variant = "Light" # "Dark"
+
+[font]
+size = 10.0
+normal.family = "SF Mono"
+bold.family = "SF Mono"
+italic.family = "SF Mono"
+bold_italic.family = "SF Mono"
+
+
+# Tip: for inspiration, look for values in the source code files of your favorite VS Code themes, and use the color picker in
+# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a 
+# small box when a HEX is detected by the editor.
