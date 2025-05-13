@@ -6,12 +6,12 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
-set ignorecase
-set smartcase
 set relativenumber
 
-inoremap jj <ESC>
-map <C-p> :w<CR>:!python3 %<CR>
+# Smart case
+set ignorecase
+set smartcase
+
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <C-q> :q<CR>
