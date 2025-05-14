@@ -8,7 +8,6 @@ set expandtab
 set autoindent
 set relativenumber
 
-# Smart case
 set ignorecase
 set smartcase
 
