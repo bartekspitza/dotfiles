@@ -11,6 +11,7 @@ set relativenumber
 set ignorecase
 set smartcase
 
+inoremap jk <Esc>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <C-q> :q<CR>

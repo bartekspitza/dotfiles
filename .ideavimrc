@@ -2,6 +2,7 @@ set ignorecase
 set smartcase
 set relativenumber
 
+inoremap jk <Esc>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <C-q> :q<CR>
