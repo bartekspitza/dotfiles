@@ -1,3 +1,4 @@
+alias gb='git branch'
 alias gs='git status'
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -10,8 +11,10 @@ alias ga='git add .'
 alias gca='git commit --amend'
 alias gcm='git commit -m'
 alias gr='git restore'
+alias gf='git fetch'
 alias dotcommit="git add . && git commit -m '.'"
 
 alias dk='docker'
 alias dcup='docker compose up'
 alias dcdown='docker compose down'
+alias lb='liquibase'
