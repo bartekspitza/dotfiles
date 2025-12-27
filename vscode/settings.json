@@ -21,5 +21,6 @@
     "*": false
   },
   "explorer.confirmPasteNative": false,
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "workbench.colorTheme": "Default Dark Modern"
 }
