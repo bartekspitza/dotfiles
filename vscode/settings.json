@@ -4,23 +4,32 @@
     "*": true,
     "plaintext": false,
     "markdown": false,
-    "scminput": false
+    "scminput": false,
   },
-  "editor.formatOnSave": true,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "supermaven.enable": {
-    "*": false
+    "*": false,
   },
   "explorer.confirmPasteNative": false,
   "editor.lineNumbers": "relative",
-  "workbench.colorTheme": "Default Dark Modern"
+  "editor.fontSize": 13,
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.panel.defaultLocation": "right",
+  "editor.codeLens": false,
+  "editor.minimap.enabled": true,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.{a80,z80,asm,inc,s}": "asm-collection",
+    "*.{list,lis}": "asm-collection-list",
+  },
+  "cursor.inlineDiff.enablePerformanceProtection": false,
 }
