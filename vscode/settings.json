@@ -21,8 +21,7 @@
   },
   "explorer.confirmPasteNative": false,
   "editor.lineNumbers": "relative",
-  "editor.fontSize": 13,
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "IntelliJ IDEA New UI Dark",
   "workbench.panel.defaultLocation": "right",
   "editor.codeLens": false,
   "editor.minimap.enabled": true,
@@ -32,4 +31,31 @@
     "*.{list,lis}": "asm-collection-list",
   },
   "cursor.inlineDiff.enablePerformanceProtection": false,
+  "cursor.composer.usageSummaryDisplay": "never",
+  "window.autoDetectColorScheme": false,
+  "editor.accessibilitySupport": "on",
+  "intellij.region": "europe",
+  "intellij.dataSharing": "none",
+
+  // Font
+  "editor.fontFamily": "'Jetbrains Mono', monospace",
+  "editor.fontSize": 12,
+  // "editor.letterSpacing": -0.2,
+  "editor.fontWeight": "400",
+  // "editor.lineHeight": 1.4,
+  "editor.fontLigatures": true,
+  "intellij.projects": [
+    {
+      "type": "gradle",
+      "path": "file:///$PROJECT_DIR$/server/build.gradle.kts",
+    },
+  ],
+  "window.zoomLevel": 1,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      // Works in tandem with the idea theme to color named parameters the way IntelliJ does it
+      "parameter.namedArgument:kotlin": "#56C1D6FF"
+    }
+  }
 }
